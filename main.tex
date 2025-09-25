@@ -1,0 +1,259 @@
+\include{settings}
+
+% 填写个人信息
+% 学院
+\newcommand{\school}{信息与电气工程学院 | School of XXXX} 
+
+% 联系方式
+\newcommand{\contact}{
+    % 根据个人喜好选择字号
+    % \small              % 小
+    % \footnotesize       % 更小
+    \scriptsize         % 再小一号
+    \textcolor{white}{
+        \faEnvelope \quad \href{mailto:xxxx@gmail.com}{xxxx@gmail.com}
+        \hspace{4em}
+        \faPhone \quad  (+86) 1xx-xxxx-xxxx
+        \hspace{4em}
+        \faWeixin \quad (+86) 1xx-xxxx-xxxx
+        \hspace{4em}
+        \faGithub \quad \href{https://github.com/xxxx}{https://github.com/xxxx}
+    }
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+% 简历正文
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% 如果有多页简历，请把页眉页脚和背景复制粘贴到第二页的内容之前
+    % 页眉：校标组合+学院名
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north, inner sep=0pt](header) at (current page.north){
+            \includegraphics[width=\paperwidth]{images/header.png}
+        };
+        \node[anchor=west](school_logo) at (header.west){
+            \hspace{0.5cm}
+            \includegraphics[width=0.25\textwidth]{images/HUE_Logo1.png}
+        };
+        \node[anchor=east](school_name) at(header.east){
+            \textcolor{white}{\textbf{\school}}
+            \hspace{0.5cm}
+        };
+    \end{tikzpicture}
+    \vspace{-3.5em}
+
+    % 页脚，联系方式
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south, inner sep=0pt](footer) at (current page.south){
+            \includegraphics[width=\paperwidth]{images/footer.png}
+        };
+        % 联系方式
+        \node[anchor=center] at(footer.center){\contact};
+    \end{tikzpicture}
+
+    % 背景
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=0.25] at(current page.center){
+            \includegraphics[width=0.7\paperwidth, keepaspectratio]{images/HUE_Logo2.png}
+        };
+    \end{tikzpicture}
+
+    % 个人信息
+    \begin{figure}[h]
+        % 左半边，信息，比例占行宽82%，可以自己调
+        \begin{minipage}{0.82\textwidth}
+            \section{\makebox[\widthof{\faAddressCard}][c]{\color{WHU_Blue}{\faAddressCard}}\quad 个人信息}
+            \begin{tabularx}{\linewidth}{p{\widthof{出生日期:}}Xp{\widthof{政治面貌:}}X}
+                姓\ \ \ \ \ \ \ \ 名: & HUE & 
+                性\ \ \ \ \ \ \ \ 别: & 男/女  \\
+                出生年月: & 1951年0月0日 & 
+                政治面貌: & 本科高校 \\
+                籍\ \ \ \ \ \ \ \ 贯: & 河北省邯郸市丛台区 & 
+                最高学历: & 博士研究生 \\
+                %% 想多加几行的话，就按上面的格式自行补充
+                %% 想加粗的话\textbf{}
+                %% 想多加几列的话，把\begin{tabularx}{\textwidth}{这里}的内容改一下，可以自己搜一下tabularx怎么用，也可以问gpt/文心一言/讯飞。
+            \end{tabularx}
+        \end{minipage}
+    \hspace{2em}
+    % 右半边，照片，比例占行宽12%，可以自己调
+    % images/avatar.png 替换成你证件照的路径。
+    \begin{minipage}{0.12\textwidth}
+        \setlength{\fboxsep}{0pt}
+        \doublebox{\includegraphics[width=\linewidth]{images/avatar.png}}
+    \end{minipage}
+    \end{figure}
+    \vspace{-1em}
+
+    % 教育背景
+    % \faGraduationCap这类\fa开头的都是font awesome里的logo，想换成其他logo的话，可以看一下附带的fontawsome.pdf，自行替换。
+    \section{\makebox[\widthof{\faGraduationCap}][c]{\color{WHU_Blue}{\faGraduationCap}}\quad 教育背景}
+
+     %教育背景（本科生）
+     \vspace{-1em}
+     \begin{table}[h!]
+         \begin{tabularx}{\textwidth}{XXp{\widthof{2021年 -- 预计2025年7月毕业}}}
+             河北工程大学 & 电子信息工程 & 2021年 -- 预计2025年7月毕业\\
+             \textbf{GPA: 4.0/4.0} & \textbf{GPA排名: 1/100} & \textbf{综测排名: 1/100} \\
+         \end{tabularx}
+     \end{table}
+
+    % 教育背景（研究生）
+    {\large \textbf{河北工程大学}}，\textbf{本科生在读} \hfill {河北省邯郸市丛台区} \\
+    \href{https://xxxx.hebeu.edu.cn/}{\underline{XX学院}}，XX专业. \hfill {1970年8月-至今} \\
+    {主修课程}：HUE特色课程?\ 等.
+
+%    \vspace{0.5em}
+%    {\large \textbf{河北工程大学}}，硕士 \hfill {河北，邯郸} \\
+%    {{园林学院}}，专业：基础数学 \hfill {2010年9月-2020年6月} \\
+%    \textbf{主修课程}：课程1、课程2、课程3、课程4\ 等。
+%
+%    \vspace{0.5em}
+%    {\large \textbf{河北工程大学}}，博士 \hfill {河北，邯郸} \\
+%    {{研究生院}}，导师：\href{导师的个人主页.site}{导师名字}\ 导师职称 \hfill {2020年9月-至今} \\
+%    \textbf{研究方向}：方向1、方向2、方向3、方向4\ 等。
+
+    % 教育背景
+ \section{\makebox[\widthof{\faGraduationCap}][c]{\color{WHU_Blue}{\faGraduationCap}}\quad 个人成绩}
+
+
+    % 科研著作（研究生）
+    
+    \textbf{2024-2025学年第一学期-XX学院-XX专业} \\
+    \textbf{GPA：114515}, (1999年9月-2099年9月). \hfill 
+    \textbf{专业排名:1/60}
+    
+
+
+    % 项目经历\科研经历\项目与教学（标题请根据需要修改）
+ \section{\makebox[\widthof{\faChalkboardTeacher}][c]{\color{WHU_Blue}{\faChalkboardTeacher}}\quad 项目与学习}
+    \vspace{0.5em}
+    {\large{\textbf{项目名}}} \hfill {\textbf{项目是否完结}}\\
+    \textbf{角色} \hfill 0000年4月-0000年5月\\
+    项目简介
+
+%    \vspace{1em}
+%    {\large{\textbf{某某主题讨论班}}}，主讲/参与 \hfill {2020年夏季}\\
+%    主要内容：内容1，内容2，内容3\ 等。
+%    
+%    \vspace{1em}
+%    {\large{\textbf{课程名称}}}，助教 \hfill {2021年夏季}\\
+%    主要内容：内容1，内容2，内容3\ 等。
+
+    % 技能特长（标题根据个人需求修改）
+ \section{\makebox[\widthof{\faWrench}][c]{\color{WHU_Blue}{\faWrench}}\quad 技能特长}
+  \vspace{0.5em}
+  \begin{itemize}
+ 	     \item 熟练使用XXXX
+ 	     \item 熟练使用XXXX
+ 	     \item 熟练使用XXXX
+ 	     \item 熟练掌握XXXX
+ 	     \item 熟练使用XXXX
+ 	     \item 熟练使用XXXX
+ 	 \end{itemize}
+    
+    \section{\makebox[\widthof{\faTrophy}][c]{\color{WHU_Blue}{\faTrophy}}\quad 竞赛经历}
+     \vspace{-1em}
+     \begin{table}[h!]
+         \begin{tabularx}{\textwidth}{Xp{\widthof{第零负责人}}p{\widthof{国家级国家级国家级国家级第100名}}p{\widthof{2030年13月}}}
+    		         \textbf{XXX赛} & 参加方式 & 结果 & 0000年3月 \\
+    		         \textbf{XXX赛} & 参加方式 & 结果 & 0000年4月 \\
+    		         \textbf{XXX赛} & 参加方式 & 结果 & 0000年5月 \\
+    		         
+    		         % 同理，可以自己加
+    		     \end{tabularx}
+    	 \end{table}
+    
+    
+     \newpage
+    % 如有需要，再加一页。可以写荣誉、竞赛等。 
+
+    % 页眉页脚不要删。
+    % % 页眉：校标组合+学院名
+     \begin{tikzpicture}[remember picture, overlay]
+     	\node[anchor=north, inner sep=0pt](header) at (current page.north){
+     		\includegraphics[width=\paperwidth]{images/header.png}
+     	};
+     	\node[anchor=west](school_logo) at (header.west){
+     		\hspace{0.5cm}
+     		\includegraphics[width=0.25\textwidth]{images/HUE_Logo1.png}
+     	};
+     	\node[anchor=east](school_name) at(header.east){
+     		\textcolor{white}{\textbf{\school}}
+     		\hspace{0.5cm}
+     	};
+     \end{tikzpicture}
+     \vspace{-3.5em}
+     
+     % 页脚，联系方式
+     \begin{tikzpicture}[remember picture, overlay]
+     	\node[anchor=south, inner sep=0pt](footer) at (current page.south){
+     		\includegraphics[width=\paperwidth]{images/footer.png}
+     	};
+     	% 联系方式
+     	\node[anchor=center] at(footer.center){\contact};
+     \end{tikzpicture}
+     
+     % 背景
+     \begin{tikzpicture}[remember picture, overlay]
+     	\node[opacity=0.25] at(current page.center){
+     		\includegraphics[width=0.7\paperwidth, keepaspectratio]{images/HUE_Logo2.png}
+     	};
+     \end{tikzpicture}
+
+
+    % % 竞赛经历
+    % \section{\makebox[\widthof{\faTrophy}][c]{\color{WHU_Blue}{\faTrophy}}\quad 竞赛经历}
+    % \vspace{-1em}
+    % \begin{table}[h!]
+    %     \begin{tabularx}{\textwidth}{Xp{\widthof{第零负责人}}p{\widthof{国家级-第100名}}p{\widthof{2030年13月}}}
+    %         \textbf{比赛1} & 第一负责人 & 国家级-第10名 & 2023年4月 \\
+    %         \textbf{比赛2} & 个人参赛 & 国家级-一等奖 & 2023年8月\\
+    %         \textbf{比赛3} & 个人参赛 & 省级-一等奖 & 2022年12月\\
+    %         % 同理，可以自己加
+    %     \end{tabularx}
+    % \end{table}
+
+    % % 技能特长
+    % \section{\makebox[\widthof{\faWrench}][c]{\color{WHU_Blue}{\faWrench}}\quad 技能特长}
+    % \vspace{0.5em}
+    % \begin{itemize}
+    %     \item 熟练使用\Cpp 、Python、Matlab编程语言。
+    %     \item 熟悉Windows与Linux端开发。
+    %     \item 熟练使用Tensorflow，Pytorch等深度学习框架。
+    %     \item 熟练掌握\Cpp 与Python环境下OpenCV与Qt应用的开发，且熟练使用Qt Creator软件。
+    %     \item 熟练使用Altium Designer与LCEDA进行封装绘制与板子设计。
+    %     \item 熟练使用Keil，Arduino IDE等集成开发软件。
+    %     \item 了解模式识别，强化学习，遗传算法，知识蒸馏等相关概念。
+    % \end{itemize}
+
+     % 所获荣誉
+     \section{\makebox[\widthof{\faStar}][c]{\color{WHU_Blue}{\faStar}}\quad 所获荣誉}
+     \vspace{-1em}
+     \begin{multicols}{2}
+         \begin{itemize}
+             \item 某年学业先进个人
+             \item 某年某奖学金某等奖
+             \item 某大使
+             \item 某年某奖学金某等奖
+             \item 某年优秀团员称号
+             \item 某年某称号
+         \end{itemize}
+     \end{multicols}
+
+    % % 其他
+     \section{\makebox[\widthof{\faInfo}][c]{\color{WHU_Blue}{\faInfo}}\quad 其他情况}
+     \begin{itemize}
+         \item 四级XXX六级XXX
+         \item XXXX
+         \item 熟练使用
+         \item 了解
+         \item 热爱
+         \item 学业上
+         \item 有较强的
+         
+     \end{itemize}
+
+\end{document}
