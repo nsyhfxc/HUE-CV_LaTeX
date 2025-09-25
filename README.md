@@ -1,5 +1,7 @@
 # HUE-CV_LaTeX
 该仓库包含了适用于河北工程大学的简历LaTeX模板
+
+
 一、版权与字体
 本模板使用的字体为开源字体狮尾四季春，详见
 https://github.com/max32002/swei-spring
